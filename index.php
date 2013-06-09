@@ -1924,10 +1924,10 @@ class EncodeExplorer
 		global $_START_TIME;
 ?>
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $this->getConfig('lang'); ?>" lang="<?php print $this->getConfig('lang'); ?>">
+<html lang="<?php print $this->getConfig('lang'); ?>">
 <head>
+<meta charset="<?php print $this->getConfig('charset'); ?>">
 <meta name="viewport" content="width=device-width" />
-<meta http-equiv="Content-Type" content="text/html; charset=<?php print $this->getConfig('charset'); ?>">
 <?php css(); ?>
 <!-- <meta charset="<?php print $this->getConfig('charset'); ?>" /> -->
 <?php
@@ -1936,7 +1936,7 @@ if(($this->getConfig('log_file') != null && strlen($this->getConfig('log_file'))
 	|| (GateKeeper::isDeleteAllowed()))
 { 
 ?>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
 <script>
 if (typeof window.jQuery === "undefined") {
     var s = document.createElement('script');
@@ -1944,7 +1944,7 @@ if (typeof window.jQuery === "undefined") {
     document.head.appendChild(s);
 }
 </script>
-<script type="text/javascript">
+<script>
 //<![CDATA[
 $(document).ready(function() {
 	$('#user_name').focus();
