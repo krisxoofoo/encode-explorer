@@ -83,7 +83,7 @@ $_CONFIG['show_load_time'] = true;
 $_CONFIG['time_format'] = "d.m.y H:i:s";
 // Charset. Use the one that suits for you. 
 // Default: $_CONFIG['charset'] = "UTF-8";
-$_CONFIG['charset'] = "UTF-8";
+$_CONFIG['charset'] = "utf-8";
 
 /* PERMISSIONS */
 // The array of folder names that will be hidden from the list.
