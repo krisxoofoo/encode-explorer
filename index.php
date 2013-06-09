@@ -220,8 +220,8 @@ class ImageServer
 		$new_height = $max_height;
 		if(($width/$height) > ($new_width/$new_height))
 			$new_height = $new_width * ($height / $width);
-		else 
-			$new_width = $new_height * ($width / $height);   
+		else
+			$new_width = $new_height * ($width / $height);
 		
 		if($new_width >= $width && $new_height >= $height)
 		{
@@ -252,7 +252,7 @@ class ImageServer
 		$etag = md5($mtime.$file);
 		
 		if ((isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && $_SERVER['HTTP_IF_MODIFIED_SINCE'] == $mtime)
-			|| (isset($_SERVER['HTTP_IF_NONE_MATCH']) && str_replace('"', '', stripslashes($_SERVER['HTTP_IF_NONE_MATCH'])) == $etag)) 
+			|| (isset($_SERVER['HTTP_IF_NONE_MATCH']) && str_replace('"', '', stripslashes($_SERVER['HTTP_IF_NONE_MATCH'])) == $etag))
 		{
 			header('HTTP/1.1 304 Not Modified');
 			return;
@@ -268,7 +268,7 @@ class ImageServer
 	}
 	
 	// A helping function for opening different types of image files
-	public static function openImage ($file) 
+	public static function openImage ($file)
 	{
 	    $size = getimagesize($file);
 	    switch($size["mime"])
@@ -358,7 +358,7 @@ class GateKeeper
 				session_name(EncodeExplorer::getConfig("session_name"));
 				
 		if(count(EncodeExplorer::getConfig("users")) > 0)
-			session_start();			
+			session_start();
 		else
 			return;
 			
@@ -1184,10 +1184,10 @@ class EncodeExplorer
 	public static function getLangString($stringName, $lang)
 	{
 		global $_TRANSLATIONS;
-		if(isset($_TRANSLATIONS[$lang]) && is_array($_TRANSLATIONS[$lang]) 
+		if(isset($_TRANSLATIONS[$lang]) && is_array($_TRANSLATIONS[$lang])
 			&& isset($_TRANSLATIONS[$lang][$stringName]))
 			return $_TRANSLATIONS[$lang][$stringName];
-		else if(isset($_TRANSLATIONS["en-UK"]))// && is_array($_TRANSLATIONS["en-UK"]) 
+		else if(isset($_TRANSLATIONS["en-UK"]))// && is_array($_TRANSLATIONS["en-UK"])
 			//&& isset($_TRANSLATIONS["en-UK"][$stringName]))
 			return $_TRANSLATIONS["en-UK"][$stringName];
 		else
@@ -1236,29 +1236,29 @@ class EncodeExplorer
 	{
 		?>
 		<div id="login">
-		<form enctype="multipart/form-data" action="<?php print $this->makeLink(false, false, null, null, null, ""); ?>" method="post">
-		<?php
-		if(GateKeeper::isLoginRequired())
-		{
-			$require_username = false;
-			foreach(EncodeExplorer::getConfig("users") as $user){
-				if($user[0] != null && strlen($user[0]) > 0){
-					$require_username = true;
-					break;
-				}
-			}
-			if($require_username)
-			{
-			?>
-			<div><label for="user_name"><?php print $this->getString("username"); ?>:</label>
-			<input type="text" name="user_name" value="" id="user_name" /></div>
+			<form enctype="multipart/form-data" action="<?php print $this->makeLink(false, false, null, null, null, ""); ?>" method="post">
 			<?php
-			}
-			?>
-			<div><label for="user_pass"><?php print $this->getString("password"); ?>:</label>
-			<input type="password" name="user_pass" id="user_pass" /></div>
-			<div><input type="submit" value="<?php print $this->getString("log_in"); ?>" class="button" /></div>
-		</form>
+			if(GateKeeper::isLoginRequired())
+			{
+				$require_username = false;
+				foreach(EncodeExplorer::getConfig("users") as $user){
+					if($user[0] != null && strlen($user[0]) > 0){
+						$require_username = true;
+						break;
+					}
+				}
+				if($require_username)
+				{
+				?>
+				<div><label for="user_name"><?php print $this->getString("username"); ?>:</label>
+				<input type="text" name="user_name" value="" id="user_name" /></div>
+				<?php
+				}
+				?>
+				<div><label for="user_pass"><?php print $this->getString("password"); ?>:</label>
+				<input type="password" name="user_pass" id="user_pass" /></div>
+				<div><input type="submit" value="<?php print $this->getString("log_in"); ?>" class="button" /></div>
+			</form>
 		</div>
 	<?php
 		}
@@ -1415,7 +1415,6 @@ if($this->mobile == false && EncodeExplorer::getConfig("show_path") == true)
 <?php
 }
 ?>
-
 <!-- START: List table -->
 <table class="table">
 <?php
@@ -1443,7 +1442,6 @@ if($this->mobile == false)
 <?php
 // Ready to display folders and files.
 $row = 1;
-
 // Folders first
 if($this->dirs)
 {
@@ -1464,7 +1462,6 @@ if($this->dirs)
 		$row =! $row;
 	}
 }
-
 // Now the files
 if($this->files)
 {
@@ -1505,18 +1502,14 @@ if($this->files)
 		$row =! $row;
 	}
 }
-
-
 // The files and folders have been displayed
 ?>
-
 </table>
 <!-- END: List table -->
 <?php
 }
 ?>
 </div>
-
 <?php
 if(GateKeeper::isAccessAllowed() && GateKeeper::showLoginBox()){
 ?>
@@ -1593,11 +1586,9 @@ if($this->mobile == false && $this->getConfig("show_load_time") == true)
 <!-- END: Info area -->
 </body>
 </html>
-	
 <?php
 	}
 }
-
 // This is where the system is activated. 
 // We check if the user wants an image and show it. If not, we show the explorer.
 $encodeExplorer = new EncodeExplorer();
