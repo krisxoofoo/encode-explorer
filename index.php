@@ -24,7 +24,6 @@
  ***************************************************************************/
 require_once 'inc/conf.php';
 require_once 'inc/locale/'.$_CONFIG['lang'] .'.php';
-
 /***************************************************************************/
 /*   CSS FOR TWEAKING THE DESIGN                                           */
 /***************************************************************************/
@@ -1238,7 +1237,7 @@ class EncodeExplorer
 		?>
 		<div id="login">
 		<form enctype="multipart/form-data" action="<?php print $this->makeLink(false, false, null, null, null, ""); ?>" method="post">
-		<?php 
+		<?php
 		if(GateKeeper::isLoginRequired())
 		{
 			$require_username = false;
@@ -1253,7 +1252,7 @@ class EncodeExplorer
 			?>
 			<div><label for="user_name"><?php print $this->getString("username"); ?>:</label>
 			<input type="text" name="user_name" value="" id="user_name" /></div>
-			<?php 
+			<?php
 			}
 			?>
 			<div><label for="user_pass"><?php print $this->getString("password"); ?>:</label>
@@ -1261,7 +1260,7 @@ class EncodeExplorer
 			<div><input type="submit" value="<?php print $this->getString("log_in"); ?>" class="button" /></div>
 		</form>
 		</div>
-	<?php 
+	<?php
 		}
 	}
 
@@ -1303,7 +1302,7 @@ $(document).ready(function() {
 		var answer = confirm('Are you sure you want to delete : \'' + $(this).attr("data-name") + "\' ?");
 		return answer;
 	});
-<?php 
+<?php
 	}	
 	if($this->logging == true)
 	{ 
@@ -1323,7 +1322,7 @@ $(document).ready(function() {
 			logFileClick("<?php print $this->location->getDir(true, true, false, 0);?>" + $(this).html());
 			return true;
 		});
-<?php 
+<?php
 	}
 	if(EncodeExplorer::getConfig("thumbnails") == true && $this->mobile == false)
 	{
@@ -1355,19 +1354,19 @@ $(document).ready(function() {
 			});
 
 		$("a.thumb").click(function(e){$("#thumb").remove(); return true;});
-<?php 
+<?php
 	}
 ?>
 	});
 //]]>                
 </script>
-<?php 
+<?php
 }
 ?>
 <title><?php if(EncodeExplorer::getConfig('main_title') != null) print EncodeExplorer::getConfig('main_title'); ?></title>
 </head>
 <body class="<?php print ($this->mobile == true?"mobile":"standard");?>">
-<?php 
+<?php
 // Print the error (if there is something to print)
 if(isset($_ERROR) && strlen($_ERROR) > 0)
 {
@@ -1381,7 +1380,7 @@ if(EncodeExplorer::getConfig('show_top') == true)
 ?>
 <div id="top">
 	<a href="<?php print $this->makeLink(false, false, null, null, null, ""); ?>"><span><?php if(EncodeExplorer::getConfig('main_title') != null) print EncodeExplorer::getConfig('main_title'); ?></span></a>
-<?php 
+<?php
 if(EncodeExplorer::getConfig("secondary_titles") != null && is_array(EncodeExplorer::getConfig("secondary_titles")) && count(EncodeExplorer::getConfig("secondary_titles")) > 0 && $this->mobile == false)
 {
 	$secondary_titles = EncodeExplorer::getConfig("secondary_titles");
@@ -1413,13 +1412,13 @@ if($this->mobile == false && EncodeExplorer::getConfig("show_path") == true)
 	}
 ?>
 </div>
-<?php 
+<?php
 }
 ?>
 
 <!-- START: List table -->
 <table class="table">
-<?php 
+<?php
 if($this->mobile == false)
 {
 ?>
@@ -1432,7 +1431,7 @@ if($this->mobile == false)
 	<td class="del"><?php print EncodeExplorer::getString("del"); ?></td>
 	<?php } ?>
 </tr>
-<?php 
+<?php
 }
 ?>
 <tr class="row two">
@@ -1513,7 +1512,7 @@ if($this->files)
 
 </table>
 <!-- END: List table -->
-<?php 
+<?php
 }
 ?>
 </div>
@@ -1533,7 +1532,7 @@ if(GateKeeper::isAccessAllowed() && GateKeeper::showLoginBox()){
 	</div>
 </form>
 <!-- END: Login area -->
-<?php 
+<?php
 }
 
 if(GateKeeper::isAccessAllowed() && $this->location->uploadAllowed() && (GateKeeper::isUploadAllowed() || GateKeeper::isNewdirAllowed()))
@@ -1542,14 +1541,14 @@ if(GateKeeper::isAccessAllowed() && $this->location->uploadAllowed() && (GateKee
 <!-- START: Upload area -->
 <form enctype="multipart/form-data" method="post">
 	<div id="upload">
-		<?php 
+		<?php
 		if(GateKeeper::isNewdirAllowed()){
 		?>
 		<div id="newdir_container">
 			<input name="userdir" type="text" class="upload_dirname" />
 			<input type="submit" value="<?php print $this->getString("make_directory"); ?>" />
 		</div>
-		<?php 
+		<?php
 		}
 		if(GateKeeper::isUploadAllowed()){
 		?>
@@ -1557,7 +1556,7 @@ if(GateKeeper::isAccessAllowed() && $this->location->uploadAllowed() && (GateKee
 			<input name="userfile" type="file" class="upload_file" />
 			<input type="submit" value="<?php print $this->getString("upload"); ?>" class="upload_sumbit" />
 		</div>
-		<?php 
+		<?php
 		}
 		?>
 		<div class="bar"></div>
