@@ -11,7 +11,8 @@ Encode Explorer is a file browser written in PHP, XHTML and CSS. It displays the
 - Optional password protection,
 - Interface for mobile devices,
 
-Original Author : Marek Rei (marek ät siineiolekala dot net)
+Original Author : Marek Rei (marek at siineiolekala dot net)
+
 Original Homepage : http://encode-explorer.siineiolekala.net
 
 Demo kris : http://test.xoofoo.org/encode-explorer/
