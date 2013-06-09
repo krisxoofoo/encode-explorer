@@ -5,26 +5,12 @@
  *
  *             Author / Autor : Marek Rei (marek ät siineiolekala dot net)
  *
- *             Version / Versioon : 6.3
- *
- *             Last change / Viimati muudetud: 23.09.2011
- *
  *             Homepage / Koduleht: encode-explorer.siineiolekala.net
- *
  *
  *             NB!: Comments are in english.
  *                  Comments needed for configuring are in both estonian and english.
  *                  If you change anything, save with UTF-8! Otherwise you may
  *                  encounter problems, especially when displaying images.
- *                  
- *             NB!: Kommentaarid on inglise keeles.
- *                  Seadistamiseks vajalikud kommentaarid on eesti ja inglise keeles.
- *                  Kui midagi muudate, salvestage UTF-8 formaati! Vastasel juhul
- *                  võivad probleemid tekkida, eriti piltide kuvamisega.
- *
- ***************************************************************************/
-
-/***************************************************************************
  *
  *   This is free software and it's distributed under GPL Licence.
  *
@@ -38,200 +24,81 @@
  ***************************************************************************/
 
 /***************************************************************************/
-/*   SIIN ON SEADED                                                        */
-/*                                                                         */
 /*   HERE ARE THE SETTINGS FOR CONFIGURATION                               */
 /***************************************************************************/
 
-//
-// Algväärtustame muutujad. Ära muuda.
-//
 // Initialising variables. Don't change these.
-//
 
 $_CONFIG = array();
 $_ERROR = "";
 $_START_TIME = microtime(TRUE);
 
-/* 
- * GENERAL SETTINGS
- */
-
-//
-// Vali sobiv keel. Allpool on näha võimalikud valikud. Vaikimisi: en
-//
+/*  GENERAL SETTINGS */
 // Choose a language. See below in the language section for options.
 // Default: $_CONFIG['lang'] = "en";
-//
 $_CONFIG['lang'] = "en";
-
-//
-// Kuva pildifailidele eelvaated. Vaikimisi: true
-// Levinumad pildifailide tüübid on toetatud (jpeg, png, gif).
-// Pdf failid on samuti toetatud kuid ImageMagick peab olema paigaldatud.
-//
 // Display thumbnails when hovering over image entries in the list.
 // Common image types are supported (jpeg, png, gif).
 // Pdf files are also supported but require ImageMagick to be installed.
 // Default: $_CONFIG['thumbnails'] = true;
-//
 $_CONFIG['thumbnails'] = true;
-
-//
-// Eelvaadete maksimumsuurused pikslites. Vaikimisi: 200, 200
-//
 // Maximum sizes of the thumbnails.
 // Default: $_CONFIG['thumbnails_width'] = 200;
 // Default: $_CONFIG['thumbnails_height'] = 200;
-//
 $_CONFIG['thumbnails_width'] = 300;
 $_CONFIG['thumbnails_height'] = 300;
-
-//
-// Mobillidele mõeldud kasutajaliides. true/false
-// Vaikimisi: true
-// 
 // Mobile interface enabled. true/false
 // Default: $_CONFIG['mobile_enabled'] = true;
-//
 $_CONFIG['mobile_enabled'] = true;
-
-//
-// Mobiilidele mõeldud kasutajaliides avaneb automaatselt. true/false
-// Vaikimisi: false
-//
 // Mobile interface as the default setting. true/false
 // Default: $_CONFIG['mobile_default'] = false;
-//
 $_CONFIG['mobile_default'] = false;
 
-/*
- * USER INTERFACE
- */
-
-//
-// Kas failid avatakse uues aknas? true/false
-//
+/*  USER INTERFACE */
 // Will the files be opened in a new window? true/false 
 // Default: $_CONFIG['open_in_new_window'] = false;
-//
 $_CONFIG['open_in_new_window'] = false;
-
-//
-// Kui sügavalt alamkataloogidest suurust näitav script faile otsib? 
-// Määra see nullist suuremaks, kui soovid kogu kasutatud ruumi suurust kuvada.
-// Vaikimisi: 0
-//
 // How deep in subfolders will the script search for files? 
 // Set it larger than 0 to display the total used space.
 // Default: $_CONFIG['calculate_space_level'] = 0;
-//
 $_CONFIG['calculate_space_level'] = 0;
-
-//
-// Kas kuvatakse lehe päis? true/false
-// Vaikimisi: true;
-//
 // Will the page header be displayed? 0=no, 1=yes. 
 // Default: $_CONFIG['show_top'] = true;
-//
 $_CONFIG['show_top'] = true;
-
-//
-// Veebilehe pealkiri
-//
 // The title for the page
 // Default: $_CONFIG['main_title'] = "Encode Explorer";
-//
 $_CONFIG['main_title'] = "Encode Explorer";
-
-//
-// Pealkirjad, mida kuvatakse lehe päises, suvalises järjekorras.
-//
 // The secondary page titles, randomly selected and displayed under the main header.
 // For example: $_CONFIG['secondary_titles'] = array("Secondary title", "&ldquo;Secondary title with quotes&rdquo;");
 // Default: $_CONFIG['secondary_titles'] = array();
-//
 $_CONFIG['secondary_titles'] = array();
-
-//
-// Kuva asukoht kataloogipuus. true/false
-// Vaikimisi: true
-//
 // Display breadcrumbs (relative path of the location).
 // Default: $_CONFIG['show_path'] = true;
-//
 $_CONFIG['show_path'] = true;
-
-//
-// Kuva lehe laadimise aega. true/false
-// Vaikimisi: false
-// 
 // Display the time it took to load the page.
 // Default: $_CONFIG['show_load_time'] = true;
-//
 $_CONFIG['show_load_time'] = true;
-
-//
-// Formaat faili muutmise aja kuvamiseks.
-//
 // The time format for the "last changed" column.
 // Default: $_CONFIG['time_format'] = "d.m.y H:i:s";
-//
 $_CONFIG['time_format'] = "d.m.y H:i:s";
-
-//
-// Kodeering, mida lehel kasutatakse. 
-// Tuleb panna sobivaks, kui täpitähtedega tekib probleeme. Vaikimisi: UTF-8
-//
 // Charset. Use the one that suits for you. 
 // Default: $_CONFIG['charset'] = "UTF-8";
-//
 $_CONFIG['charset'] = "UTF-8";
 
-/*
-* PERMISSIONS
-*/
-
-//
-// Kaustade varjamine. Kaustade nimed mida lehel ei kuvata.
-// Näiteks: CONFIG['hidden_dirs'] = array("ikoonid", "kaustanimi", "teinekaust");
-//
+/* PERMISSIONS */
 // The array of folder names that will be hidden from the list.
 // Default: $_CONFIG['hidden_dirs'] = array();
-//
 $_CONFIG['hidden_dirs'] = array();
-
-//
-// Failide varjamine. Failide nimed mida lehel ei kuvata.
-// NB! Märgitud nimega failid ja kaustad varjatakse kõigis alamkaustades.
-//
 // Filenames that will be hidden from the list.
 // Default: $_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd");
-//
 $_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd");
-
-//
-// Määra kas lehe nägemiseks peab sisse logima.
-// 'false' tähendab, et leht on avalik
-// 'true' tähendab, et kasutaja peab sisestama parooli (vaata allpool).
-//
 // Whether authentication is required to see the contents of the page.
 // If set to false, the page is public.
 // If set to true, you should specify some users as well (see below).
 // Important: This only prevents people from seeing the list.
 // They will still be able to access the files with a direct link.
 // Default: $_CONFIG['require_login'] = false;
-//
 $_CONFIG['require_login'] = false;
-
-//
-// Kasutajanimed ja paroolid, lehele ligipääsu piiramiseks.
-// Näiteks: $_CONFIG['users'] = array(array("user1", "pass1"), array("user2", "pass2"));
-// Võimalik lehte kaitsta ka ainult üldise parooliga.
-// Näiteks: $_CONFIG['users'] = array(array(null, "pass"));
-// Kui ühtegi kasutajat märgitud ei ole, siis parooli ei küsita.
-//
 // Usernames and passwords for restricting access to the page.
 // The format is: array(username, password, status)
 // Status can be either "user" or "admin". User can read the page, admin can upload and delete.
@@ -240,143 +107,67 @@ $_CONFIG['require_login'] = false;
 // That way everyone can see the page but username and password are needed for uploading.
 // For example: $_CONFIG['users'] = array(array("username", "password", "admin"));
 // Default: $_CONFIG['users'] = array();
-//
 $_CONFIG['users'] = array();
-
-//
-// Seaded uploadimiseks, uute kaustade loomiseks ja kustutamiseks.
-// Valikud kehtivad ainult andmin kontode jaoks, tavakasutajatel pole need kunagi lubatud.
-//
 // Permissions for uploading, creating new directories and deleting.
 // They only apply to admin accounts, regular users can never perform these operations.
 // Default:
 // $_CONFIG['upload_enable'] = true;
 // $_CONFIG['newdir_enable'] = true;
 // $_CONFIG['delete_enable'] = false;
-//
 $_CONFIG['upload_enable'] = true;
 $_CONFIG['newdir_enable'] = true;
 $_CONFIG['delete_enable'] = false;
 
-/*
- * UPLOADING
- */
-
-//
-// Nimekiri kaustadest kuhu on lubatud uploadida ja uusi kaustu luua.
-// Näiteks: $_CONFIG['upload_dirs'] = array("./myuploaddir1/", "./mydir/upload2/");
-// Kausta asukoht peab olema määratud põhikausta suhtes, algama "./" ja lõppema "/" märgiga.
-// Kõik kaustad märgitute all on automaatselt kaasa arvatud.
-// Kui nimekiri on tühi (vaikimisi), siis on kõikidesse kaustadesse failide lisamine lubatud.
-//
+/* UPLOADING */
 // List of directories where users are allowed to upload. 
 // For example: $_CONFIG['upload_dirs'] = array("./myuploaddir1/", "./mydir/upload2/");
 // The path should be relative to the main directory, start with "./" and end with "/".
 // All the directories below the marked ones are automatically included as well.
 // If the list is empty (default), all directories are open for uploads, given that the password has been set.
 // Default: $_CONFIG['upload_dirs'] = array();
-//
 $_CONFIG['upload_dirs'] = array();
-
-//
-// MIME failitüübid mis on uploadimiseks lubatud.
-// Näiteks: $_CONFIG['upload_allow_type'] = array("image/png", "image/gif", "image/jpeg");
-//
 // MIME type that are allowed to be uploaded.
 // For example, to only allow uploading of common image types, you could use:
 // $_CONFIG['upload_allow_type'] = array("image/png", "image/gif", "image/jpeg");
 // Default: $_CONFIG['upload_allow_type'] = array();
-//
 $_CONFIG['upload_allow_type'] = array();
-
-//
-// Uploadimiseks keelatud faililaiendid
-//
 // File extensions that are not allowed for uploading.
 // For example: $_CONFIG['upload_reject_extension'] = array("php", "html", "htm");
 // Default: $_CONFIG['upload_reject_extension'] = array();
-//
 $_CONFIG['upload_reject_extension'] = array("php");
 
-/*
- * LOGGING
- */
-
-//
-// Failide lisamisest teatamise e-maili aadress.
-// Kui määratud, siis saadetakse sellele aadressile e-mail iga kord kui keegi lisab uue faili või kausta.
-//
+/* LOGGING */
 // Upload notification e-mail.
 // If set, an e-mail will be sent every time someone uploads a file or creates a new dirctory.
 // Default: $_CONFIG['upload_email'] = "";
-//
 $_CONFIG['upload_email'] = "";
-
-//
-// Logifail. Kui määratud, siis kirjutatakse kaustade ja failide avamise kohta logi faili.
-// Näiteks: $_CONFIG['log_file'] = ".log.txt";
-//
 // Logfile name. If set, a log line will be written there whenever a directory or file is accessed.
 // For example: $_CONFIG['log_file'] = ".log.txt";
 // Default: $_CONFIG['log_file'] = "";
-//
 $_CONFIG['log_file'] = "";
 
-/*
- * SYSTEM
- */
-
-//
-// Algkataloogi suhteline aadress. Reeglina ei ole vaja muuta. 
-// Kasutage ainult suhtelisi alamkatalooge!
-// Vaikimisi: .
-//
+/* SYSTEM */
 // The starting directory. Normally no need to change this.
 // Use only relative subdirectories! 
 // For example: $_CONFIG['starting_dir'] = "./mysubdir/";
 // Default: $_CONFIG['starting_dir'] = ".";
-//
 $_CONFIG['starting_dir'] = ".";
-
-//
-// Asukoht serveris. Tavaliselt ei ole vaja siia midagi panna kuna script leiab ise õige asukoha. 
-// Mõnes serveris tuleb piirangute tõttu see aadress ise teistsuguseks määrata.
-// See fail peaks asuma serveris aadressil [AADRESS]/index.php
-// Aadress võib olla näiteks "/www/data/www.minudomeen.ee/minunimi"
-//
 // Location in the server. Usually this does not have to be set manually.
 // Default: $_CONFIG['basedir'] = "";
-//
 $_CONFIG['basedir'] = "";
-
-//
-// Suured failid. Kui sul on failiruumis väga suured failid (>4GB), siis on see vajalik
-// faili suuruse õigeks määramiseks. Vaikimisi: false
-//
 // Big files. If you have some very big files (>4GB), enable this for correct
 // file size calculation.
 // Default: $_CONFIG['large_files'] = false;
-//
 $_CONFIG['large_files'] = false;
-
-//
-// Küpsise/sessiooni nimi. 
-// Anna sellele originaalne väärtus kui soovid samas ruumis kasutada mitut koopiat
-// ning ei taha, et toimuks andmete jagamist nende vahel.
-// Väärtus tohib sisaldada ainult tähti ja numbreid. Näiteks: MYSESSION1
-//
 // The session name, which is used as a cookie name. 
 // Change this to something original if you have multiple copies in the same space
 // and wish to keep their authentication separate. 
 // The value can contain only letters and numbers. For example: MYSESSION1
 // More info at: http://www.php.net/manual/en/function.session-name.php
 // Default: $_CONFIG['session_name'] = "";
-//
 $_CONFIG['session_name'] = "";
 
 /***************************************************************************/
-/*   TÕLKED                                                                */
-/*                                                                         */
 /*   TRANSLATIONS.                                                         */
 /***************************************************************************/
 
@@ -827,11 +618,8 @@ $_TRANSLATIONS["tr"] = array(
 );
 
 /***************************************************************************/
-/*   CSS KUJUNDUSE MUUTMISEKS                                              */
-/*                                                                         */
 /*   CSS FOR TWEAKING THE DESIGN                                           */
 /***************************************************************************/
-
 
 function css()
 {
@@ -901,19 +689,12 @@ body.mobile #upload {margin-bottom:15px;}
 }
 
 /***************************************************************************/
-/*   PILTIDE KOODID                                                        */
-/*   Saad neid ise oma piltidest juurde genereerida base64 konverteriga    */
-/*   Näiteks siin: http://www.motobit.com/util/base64-decoder-encoder.asp  */
-/*   Või siin: http://www.greywyvern.com/code/php/binary2base64            */
-/*   Või kasuta lihtsalt PHP base64_encode() funktsiooni                   */
-/*                                                                         */
 /*   IMAGE CODES IN BASE64                                                 */
 /*   You can generate your own with a converter                            */
 /*   Like here: http://www.motobit.com/util/base64-decoder-encoder.asp     */
 /*   Or here: http://www.greywyvern.com/code/php/binary2base64             */
 /*   Or just use PHP base64_encode() function                              */
 /***************************************************************************/
-
 
 $_IMAGES = array();
 
@@ -1292,20 +1073,14 @@ $_IMAGES["xml"] = $_IMAGES["code"];
 $_IMAGES["zip"] = $_IMAGES["archive"];
 
 /***************************************************************************/
-/*   EDASIST KOODI EI OLE TARVIS MUUTA                                     */
-/*                                                                         */
 /*   HERE COMES THE CODE.                                                  */
 /*   DON'T CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING ;)                    */
 /***************************************************************************/
 
-//
 // The class that displays images (icons and thumbnails)
-//
 class ImageServer
 {
-	//
 	// Checks if an image is requested and displays one if needed
-	//
 	public static function showImage()
 	{
 		global $_IMAGES;
@@ -1364,9 +1139,7 @@ class ImageServer
 		return $im2;
 	}
 	
-	//
 	// Creates and returns a thumbnail image object from an image file
-	//
 	public static function createThumbnail($file)
 	{
 		if(is_int(EncodeExplorer::getConfig('thumbnails_width')))
@@ -1416,10 +1189,8 @@ class ImageServer
 		return $new_image;
 	}
 	
-	//
 	// Function for displaying the thumbnail.
 	// Includes attempts at cacheing it so that generation is minimised.
-	//
 	public static function showThumbnail($file)
 	{
 		if(filemtime($file) < filemtime($_SERVER['SCRIPT_FILENAME']))
@@ -1445,9 +1216,7 @@ class ImageServer
 		}
 	}
 	
-	//
 	// A helping function for opening different types of image files
-	//
 	public static function openImage ($file) 
 	{
 	    $size = getimagesize($file);
@@ -1470,9 +1239,7 @@ class ImageServer
 	}
 }
 
-//
 // The class for logging user activity
-//
 class Logger
 {
 	public static function log($message)
@@ -1530,9 +1297,7 @@ class Logger
 	}
 }
 
-//
 // The class controls logging in and authentication
-//
 class GateKeeper
 {
 	public static function init()
@@ -1657,9 +1422,7 @@ class GateKeeper
 	}
 }
 
-// 
 // The class for any kind of file managing (new folder, upload, etc).
-//
 class FileManager
 {
 	/* Obsolete code
@@ -1788,9 +1551,7 @@ class FileManager
 		}
 	}
 
-	//
 	// The main function, checks if the user wants to perform any supported operations
-	// 
 	function run($location)
 	{
 		if(isset($_POST['userdir']) && strlen($_POST['userdir']) > 0){
@@ -1826,17 +1587,13 @@ class FileManager
 	}
 }
 
-//
 // Dir class holds the information about one directory in the list
-//
 class Dir
 {
 	var $name;
 	var $location;
 
-	//
 	// Constructor
-	// 
 	function Dir($name, $location)
 	{
 		$this->name = $name;
@@ -1858,9 +1615,7 @@ class Dir
 		return rawurlencode($this->name);
 	}
 
-	//
 	// Debugging output
-	// 
 	function debug()
 	{
 		print("Dir name (htmlspecialchars): ".$this->getName()."\n");
@@ -1868,9 +1623,7 @@ class Dir
 	}
 }
 
-//
 // File class holds the information about one file in the list
-//
 class File
 {
 	var $name;
@@ -1923,9 +1676,7 @@ class File
 		return $this->modTime;
 	}
 
-	//
 	// Determine the size of a file
-	// 
 	public static function getFileSize($file)
 	{
 		$sizeInBytes = filesize($file);
@@ -1966,9 +1717,7 @@ class File
 		return strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
 	}
 
-	//
 	// Debugging output
-	// 
 	function debug()
 	{
 		print("File name: ".$this->getName()."\n");
@@ -2011,9 +1760,7 @@ class Location
 {
 	var $path;
 
-	//
 	// Split a file path into array elements
-	// 
 	public static function splitPath($dir)
 	{
 		$dir = stripslashes($dir);
@@ -2028,10 +1775,8 @@ class Location
 		return $path2;
 	}
 
-	//
 	// Get the current directory.
 	// Options: Include the prefix ("./"); URL-encode the string; HTML-encode the string; return directory n-levels up
-	// 
 	function getDir($prefix, $encoded, $html, $up)
 	{
 		$dir = "";
@@ -2062,9 +1807,7 @@ class Location
 		return (strlen(EncodeExplorer::getConfig('basedir')) > 0?EncodeExplorer::getConfig('basedir'):dirname($_SERVER['SCRIPT_FILENAME']))."/".$this->getDir(true, false, false, 0);
 	}
 
-	//
 	// Debugging output
-	// 
 	function debug()
 	{
 		print_r($this->path);
@@ -2074,10 +1817,7 @@ class Location
 		print("Upper dir without prefix: ".$this->getDir(false, false, false, 1)."\n");
 	}
 
-
-	//
 	// Set the current directory
-	// 
 	function init()
 	{
 		if(!isset($_GET['dir']) || strlen($_GET['dir']) == 0)
@@ -2090,9 +1830,7 @@ class Location
 		}
 	}
 	
-	//
 	// Checks if the current directory is below the input path
-	//
 	function isSubDir($checkPath)
 	{
 		for($i = 0; $i < count($this->path); $i++)
@@ -2103,9 +1841,7 @@ class Location
 		return false;
 	}
 	
-	//
 	// Check if uploading is allowed into the current directory, based on the configuration
-	//
 	function uploadAllowed()
 	{
 		if(EncodeExplorer::getConfig('upload_enable') != true)
@@ -2160,9 +1896,7 @@ class EncodeExplorer
 	var $spaceUsed;
 	var $lang;
 	
-	//
 	// Determine sorting, calculate space.
-	// 
 	function init()
 	{
 		$this->sort_by = "";
@@ -2201,15 +1935,11 @@ class EncodeExplorer
 			$this->logging = true;
 	}
 
-	//
 	// Read the file list from the directory
-	// 
 	function readDir()
 	{
 		global $encodeExplorer;
-		//
 		// Reading the data of files and directories
-		//
 		if($open_dir = @opendir($this->location->getFullPath()))
 		{
 			$this->dirs = array();
@@ -2235,9 +1965,7 @@ class EncodeExplorer
 		}
 	}
 
-	//
 	// A recursive function for calculating the total used space
-	// 
 	function sum_dir($start_dir, $ignore_files, $levels = 1) 
 	{
 		if ($dir = opendir($start_dir)) 
@@ -2374,9 +2102,7 @@ class EncodeExplorer
 		return round($size, 2)." ".$y;
 	}
 
-	//
 	// Debugging output
-	// 
 	function debug()
 	{
 		print("Explorer location: ".$this->location->getDir(true, false, false, 0)."\n");
@@ -2386,10 +2112,7 @@ class EncodeExplorer
 			$this->files[$i]->output();
 	}
 	
-	//
 	// Comparison functions for sorting.
-	//
-	
 	public static function cmp_name($b, $a)
 	{
 		return strcasecmp($a->name, $b->name);
@@ -2405,10 +2128,8 @@ class EncodeExplorer
 		return ($a->modTime - $b->modTime);
 	}
 	
-	//
 	// The function for getting a translated string.
 	// Falls back to english if the correct language is missing something.
-	//
 	public static function getLangString($stringName, $lang)
 	{
 		global $_TRANSLATIONS;
@@ -2427,9 +2148,7 @@ class EncodeExplorer
 		return EncodeExplorer::getLangString($stringName, $this->lang);
 	}
 	
-	//
 	// The function for getting configuration values
-	//
 	public static function getConfig($name)
 	{
 		global $_CONFIG;
@@ -2452,9 +2171,7 @@ class EncodeExplorer
 		EncodeExplorer::setError($this->getString($stringName));
 	}
 
-	//
 	// Main function, activating tasks
-	// 
 	function run($location)
 	{
 		$this->location = $location;
@@ -2496,9 +2213,7 @@ class EncodeExplorer
 		}
 	}
 
-	//
 	// Printing the actual page
-	// 
 	function outputHtml()
 	{
 		global $_ERROR;
@@ -2593,9 +2308,7 @@ $(document).ready(function() {
 </head>
 <body class="<?php print ($this->mobile == true?"mobile":"standard");?>">
 <?php 
-//
 // Print the error (if there is something to print)
-//
 if(isset($_ERROR) && strlen($_ERROR) > 0)
 {
 	print "<div id=\"error\">".$_ERROR."</div>";
@@ -2669,14 +2382,10 @@ if($this->mobile == false)
 	</td>
 </tr>
 <?php
-//
 // Ready to display folders and files.
-//
 $row = 1;
 
-//
 // Folders first
-//
 if($this->dirs)
 {
 	foreach ($this->dirs as $dir)
@@ -2697,9 +2406,7 @@ if($this->dirs)
 	}
 }
 
-//
 // Now the files
-//
 if($this->files)
 {
 	$count = 0;
@@ -2741,9 +2448,7 @@ if($this->files)
 }
 
 
-//
 // The files and folders have been displayed
-//
 ?>
 
 </table>
@@ -2834,10 +2539,8 @@ if($this->mobile == false && $this->getConfig("show_load_time") == true)
 	}
 }
 
-//
 // This is where the system is activated. 
 // We check if the user wants an image and show it. If not, we show the explorer.
-//
 $encodeExplorer = new EncodeExplorer();
 $encodeExplorer->init();
 
