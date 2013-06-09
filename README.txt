@@ -2,24 +2,16 @@
  *
  *             Encode Explorer
  *
- *             Author / Autor : Marek Rei (marek ät siineiolekala dot net)
+ *             Original Author : Marek Rei (marek ät siineiolekala dot net)
  *
- *             Version / Versioon : 6.3
+ *             Original Homepage : encode-explorer.siineiolekala.net
  *
- *             Last change / Viimati muudetud: 23.09.2011
- *
- *             Homepage / Koduleht: encode-explorer.siineiolekala.net
- *
+ *             Demo : test.xoofoo.org/encode-explorer/
  *
  *             NB!: Comments are in english.
- *                  Comments needed for configuring are in both estonian and english.
+ *                  Comments needed for configuring are in english.
  *                  If you change anything, save with UTF-8! Otherwise you may
  *                  encounter problems, especially when displaying images.
- *                  
- *             NB!: Kommentaarid on inglise keeles.
- *                  Seadistamiseks vajalikud kommentaarid on eesti ja inglise keeles.
- *                  Kui midagi muudate, salvestage UTF-8 formaati! Vastasel juhul
- *                  võivad probleemid tekkida, eriti piltide kuvamisega.
  *
  ***************************************************************************/
 
@@ -38,19 +30,9 @@
 
 /***************************************************************************
  *
- *   Kasutusjuhend
- *
- *   Oma serveriruumi tuleb üles laadida index.php.
- *   Avades index.php mõne tekstiredaktoriga, saab faili alguses muuta 
- *   mitmeid seadeid, nende hulgas uploadi võimalust, kujunduselemente jne.
- *   Soovitatav on salvestada UTF-8 formaati!
- *
- ***************************************************************************/
- *
  *   Manual
  *
- *   You have to upload index.php.
- *   If you open index.php you can edit several settings.
- *   You should make sure the edited file will be saved in UTF-8!
+ *   Decompress archive and upload on your server.
+ *   Edit inc/conf.php and  you can edit several settings.
  *
  ***************************************************************************/
