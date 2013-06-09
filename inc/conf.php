@@ -11,8 +11,8 @@ $_START_TIME = microtime(TRUE);
 
 /*  GENERAL SETTINGS */
 // Choose a language. See below in the language section for options.
-// Default: $_CONFIG['lang'] = "en";
-$_CONFIG['lang'] = "en";
+// Default: $_CONFIG['lang'] = "en-UK";
+$_CONFIG['lang'] = "en-UK";
 // Display thumbnails when hovering over image entries in the list.
 // Common image types are supported (jpeg, png, gif).
 // Pdf files are also supported but require ImageMagick to be installed.
