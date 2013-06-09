@@ -512,12 +512,12 @@ class FileManager
 				// The target directory is not writable
 				$encodeExplorer->setErrorString("upload_dir_not_writable");
 			}
-			else if(!mkdir($location->getDir(true, false, false, 0).$dirname, 0777))
+			else if(!mkdir($location->getDir(true, false, false, 0).$dirname, EncodeExplorer::getConfig("new_dir_mode")))
 			{
 				// Error creating a new directory
 				$encodeExplorer->setErrorString("new_dir_failed");
 			}
-			else if(!chmod($location->getDir(true, false, false, 0).$dirname, 0777))
+			else if(!chmod($location->getDir(true, false, false, 0).$dirname, EncodeExplorer::getConfig("new_dir_mode")))
 			{
 				// Error applying chmod 777
 				$encodeExplorer->setErrorString("chmod_dir_failed");
@@ -574,7 +574,7 @@ class FileManager
 		}
 		else
 		{
-			chmod($upload_file, 0755);
+			chmod($upload_file, EncodeExplorer::getConfig("upload_file_mode"));
 			Logger::logCreation($location->getDir(true, false, false, 0).$name, false);
 			Logger::emailNotification($location->getDir(true, false, false, 0).$name, true);
 		}

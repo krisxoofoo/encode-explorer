@@ -111,6 +111,8 @@ $_CONFIG['upload_allow_type'] = array();
 // For example: $_CONFIG['upload_reject_extension'] = array("php", "html", "htm");
 // Default: $_CONFIG['upload_reject_extension'] = array();
 $_CONFIG['upload_reject_extension'] = array("php");
+$_CONFIG['new_dir_mode'] = 0755;
+$_CONFIG['upload_file_mode'] = 0644;
 
 /* LOGGING */
 // Upload notification e-mail.
