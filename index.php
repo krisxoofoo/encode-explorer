@@ -88,7 +88,7 @@ $_CONFIG['charset'] = "UTF-8";
 /* PERMISSIONS */
 // The array of folder names that will be hidden from the list.
 // Default: $_CONFIG['hidden_dirs'] = array();
-$_CONFIG['hidden_dirs'] = array();
+$_CONFIG['hidden_dirs'] = array('inc', '.git');
 // Filenames that will be hidden from the list.
 // Default: $_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd");
 $_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htaccess", ".htpasswd");
