@@ -1,8 +1,8 @@
 <?php
 $_TRANSLATIONS = array();
 // English
-$_TRANSLATIONS["en-US"] = array("
-	file_name" => "File name",
+$_TRANSLATIONS["en-US"] = array(
+	"file_name" => "File name",
 	"size" => "Size",
 	"last_changed" => "Last updated",
 	"total_used_space" => "Total space used",
