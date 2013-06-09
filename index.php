@@ -1936,7 +1936,14 @@ if(($this->getConfig('log_file') != null && strlen($this->getConfig('log_file'))
 	|| (GateKeeper::isDeleteAllowed()))
 { 
 ?>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script>
+if (typeof window.jQuery === "undefined") {
+    var s = document.createElement('script');
+    s.src = "inc/js/jquery.min.js";
+    document.head.appendChild(s);
+}
+</script>
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function() {
