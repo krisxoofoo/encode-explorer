@@ -44,7 +44,7 @@ $_CONFIG['show_top'] = true;
 // The logo for the page
 // For example: $_CONFIG['main_logo'] = "inc/img/logo.png";
 // Default: $_CONFIG['main_logo'] = "";
-$_CONFIG['main_logo'] = "Encode Explorer";
+$_CONFIG['main_logo'] = "";
 // The title for the page
 // Default: $_CONFIG['main_title'] = "Encode Explorer";
 $_CONFIG['main_title'] = "Encode Explorer";
@@ -90,7 +90,7 @@ $_CONFIG['require_login'] = false;
 // That way everyone can see the page but username and password are needed for uploading.
 // For example: $_CONFIG['users'] = array(array("username", "password_hash", "admin"));
 // Default: $_CONFIG['users'] = array();
-$_CONFIG['users'] = array(array("admin", "password_hash", "admin"));
+$_CONFIG['users'] = array(array("admin", "c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec", "admin")); // id1 = admin and password = admin
 // password_hash must be the sha512 hashed value of your password.
 // It can be obtained with this shell command 'printf "your_password" | openssl sha512'
 // Permissions for uploading, creating new directories and deleting.
