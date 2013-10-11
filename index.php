@@ -370,10 +370,10 @@ class GateKeeper
 			
 		if(isset($_POST['user_pass']) && strlen($_POST['user_pass']) > 0)
 		{
-			if(GateKeeper::isUser((isset($_POST['user_name'])?$_POST['user_name']:""), $_POST['user_pass']))
+			if(GateKeeper::isUser((isset($_POST['user_name'])?$_POST['user_name']:""), hash("sha512",$_POST['user_pass'])))
 			{
 				$_SESSION['ee_user_name'] = isset($_POST['user_name'])?$_POST['user_name']:"";
-				$_SESSION['ee_user_pass'] = $_POST['user_pass'];
+				$_SESSION['ee_user_pass'] = hash("sha512",$_POST['user_pass']);
 				
 				$addr = $_SERVER['PHP_SELF'];
 				if(isset($_GET['m']))
@@ -1562,6 +1562,7 @@ if(GateKeeper::isAccessAllowed() && $this->location->uploadAllowed() && (GateKee
 ?>
 <!-- START: Info area -->
 <div id="info">
+<p>
 <?php
 if(GateKeeper::isUserLoggedIn())
 	print "<a href=\"".$this->makeLink(false, true, null, null, null, "")."\">".$this->getString("log_out")."</a> | ";
@@ -1570,18 +1571,19 @@ if(EncodeExplorer::getConfig("mobile_enabled") == true)
 {
 	print "<a href=\"".$this->makeLink(true, false, null, null, null, $this->location->getDir(false, true, false, 0))."\">\n";
 	print ($this->mobile == true)?$this->getString("standard_version"):$this->getString("mobile_version")."\n";
-	print "</a> | \n";
+	print "</a>\n";
 }
 if(GateKeeper::isAccessAllowed() && $this->getConfig("calculate_space_level") > 0 && $this->mobile == false)
 {
-	print $this->getString("total_used_space").": ".$this->spaceUsed." MB | ";
+	print (" | " .$this->getString("total_used_space").": ".$this->spaceUsed." MB ");
 }
 if($this->mobile == false && $this->getConfig("show_load_time") == true)
 {
-	printf($this->getString("page_load_time")." | ", (microtime(TRUE) - $_START_TIME)*1000);
+	printf(" | " .$this->getString("page_load_time"), (microtime(TRUE) - $_START_TIME)*1000);
 }
 ?> 
-<br>Based on <a href="http://encode-explorer.siineiolekala.net">Encode Explorer</a> modified by <a href="https://github.com/krisxoofoo/encode-explorer/">Kris XooFoo</a>
+</p>
+<p><?php if(EncodeExplorer::getConfig('footer_text') != null) print EncodeExplorer::getConfig('footer_text'); ?></p>
 </div>
 <!-- END: Info area -->
 </body>

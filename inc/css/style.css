@@ -17,7 +17,7 @@ table.table td{padding:3px;}
 table.table tr.row.two {background-color:#fcfdfe;}
 table.table tr.row.one {background-color:#f8f9fa;}
 table.table tr.row td.icon {width:25px;padding-top:3px;padding-bottom:1px;}
-table.table td.del {width:25px;}
+table.table td.del {width:25px; text-align: center;}
 table.table tr.row td.size {width: 100px; text-align: right;}
 table.table tr.row td.changed {width: 150px;text-align: center;}
 table.table tr.header img {vertical-align:bottom;}

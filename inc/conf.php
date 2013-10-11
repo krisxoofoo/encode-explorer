@@ -41,13 +41,20 @@ $_CONFIG['calculate_space_level'] = 0;
 // Will the page header be displayed? 0=no, 1=yes. 
 // Default: $_CONFIG['show_top'] = true;
 $_CONFIG['show_top'] = true;
+// The logo for the page
+// For example: $_CONFIG['main_logo'] = "inc/img/logo.png";
+// Default: $_CONFIG['main_logo'] = "";
+$_CONFIG['main_logo'] = "Encode Explorer";
 // The title for the page
 // Default: $_CONFIG['main_title'] = "Encode Explorer";
 $_CONFIG['main_title'] = "Encode Explorer";
 // The secondary page titles, randomly selected and displayed under the main header.
 // For example: $_CONFIG['secondary_titles'] = array("Secondary title", "&ldquo;Secondary title with quotes&rdquo;");
 // Default: $_CONFIG['secondary_titles'] = array();
-$_CONFIG['secondary_titles'] = array();
+$_CONFIG['secondary_titles'] = array("Secondary title", "&ldquo;Secondary title with quotes&rdquo;");
+// Text in footer
+// Default: $_CONFIG['footer_text'] = "Encode Explorer";
+$_CONFIG['footer_text'] = "Based on <a href='http://encode-explorer.siineiolekala.net'>Encode Explorer</a> modified by <a href='https://github.com/krisxoofoo/encode-explorer/'>Kris XooFoo</a>";
 // Display breadcrumbs (relative path of the location).
 // Default: $_CONFIG['show_path'] = true;
 $_CONFIG['show_path'] = true;
@@ -76,14 +83,14 @@ $_CONFIG['hidden_files'] = array(".ftpquota", "index.php", "index.php~", ".htacc
 // Default: $_CONFIG['require_login'] = false;
 $_CONFIG['require_login'] = false;
 // Usernames and passwords for restricting access to the page.
-// The format is: array(username, password, status)
+// The format is: array(username, password_hash, status)
 // Status can be either "user" or "admin". User can read the page, admin can upload and delete.
-// For example: $_CONFIG['users'] = array(array("username1", "password1", "user"), array("username2", "password2", "admin"));
+// For example: $_CONFIG['users'] = array(array("username1", "password_hash1", "user"), array("username2", "password_hash2", "admin"));
 // You can also keep require_login=false and specify an admin. 
 // That way everyone can see the page but username and password are needed for uploading.
-// For example: $_CONFIG['users'] = array(array("username", "password", "admin"));
+// For example: $_CONFIG['users'] = array(array("username", "password_hash", "admin"));
 // Default: $_CONFIG['users'] = array();
-$_CONFIG['users'] = array();
+$_CONFIG['users'] = array(array("admin", "password_hash", "admin"));
 // Permissions for uploading, creating new directories and deleting.
 // They only apply to admin accounts, regular users can never perform these operations.
 // Default:
@@ -92,7 +99,7 @@ $_CONFIG['users'] = array();
 // $_CONFIG['delete_enable'] = false;
 $_CONFIG['upload_enable'] = true;
 $_CONFIG['newdir_enable'] = true;
-$_CONFIG['delete_enable'] = false;
+$_CONFIG['delete_enable'] = true;
 
 /* UPLOADING */
 // List of directories where users are allowed to upload. 
