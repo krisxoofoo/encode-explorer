@@ -91,6 +91,8 @@ $_CONFIG['require_login'] = false;
 // For example: $_CONFIG['users'] = array(array("username", "password_hash", "admin"));
 // Default: $_CONFIG['users'] = array();
 $_CONFIG['users'] = array(array("admin", "password_hash", "admin"));
+// password_hash must be the sha512 hashed value of your password.
+// It can be obtained with this shell command 'printf "your_password" | openssl sha512'
 // Permissions for uploading, creating new directories and deleting.
 // They only apply to admin accounts, regular users can never perform these operations.
 // Default:
