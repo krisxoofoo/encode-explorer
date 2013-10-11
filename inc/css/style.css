@@ -36,7 +36,7 @@ table img{border:0;}
 #upload #newdir_container, #upload #password_container {float:left;}
 #upload #upload_container{float:right;}
 #upload input.upload_dirname, #upload input.upload_password{width:140px;}
-#upload input.upload_file{font-size:small;}
+#upload input.upload_file{font-size:small;width:280px;}
 /* Breadcrumbs */
 div.breadcrumbs {display:block;padding:1px 3px;color:#ccc;font-size:x-small;}
 div.breadcrumbs a{display:inline-block;color:#ccc;padding:2px 0;font-size:small;}
@@ -46,7 +46,7 @@ div.breadcrumbs a{display:inline-block;color:#ccc;padding:2px 0;font-size:small;
 #login label{width: 120px;text-align: right;}
 /* Mobile interface */
 body.mobile #frame, body.mobile #info, body.mobile #upload {max-width:none;}
-body.mobile {font-size:medium;}
+body.mobile {font-size:.7em;}
 body.mobile a.item {display:block;padding:10px 0;}
 body.mobile a.item span.size {float:right;margin-left:10px;}
 body.mobile table.table {margin-bottom:30px;}
