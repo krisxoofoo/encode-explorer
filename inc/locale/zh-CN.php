@@ -1,6 +1,6 @@
 <?php
 $_TRANSLATIONS = array();
-// Chinese
+// 简体中文(Simplified Chinese)
 $_TRANSLATIONS["zh-CN"] = array(
 	"file_name" => "文件名",
 	"size" => "大小",
@@ -23,12 +23,12 @@ $_TRANSLATIONS["zh-CN"] = array(
 	"upload_dir_not_writable" => "上传目录不可写",
 	"mobile_version" => "移动版本",
 	"standard_version" => "标准版本",
-	"page_load_time" => "页面载入时间",
+	"page_load_time" => "页面载入时间：%.2f ms",
 	"wrong_pass" => "密码错误",
 	"username" => "用户名",
 	"log_in" => "登录",
 	"log_out" => "注销",
-	"upload_type_not_allowed" => "上传文件类型被禁止",
+	"upload_type_not_allowed" => "禁止上传该文件类型",
 	"del" => "删除"
 );
 ?>

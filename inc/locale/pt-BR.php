@@ -1,7 +1,7 @@
 <?php
 $_TRANSLATIONS = array();
 // Portuguese (Brazil)
-$_TRANSLATIONS["pt-BR"] = array(
+$_TRANSLATIONS["pt_BR"] = array(
 	"file_name" => "Nome do arquivo",
 	"size" => "Tamanho",
 	"last_changed" => "Modificado em",
@@ -27,6 +27,8 @@ $_TRANSLATIONS["pt-BR"] = array(
 	"wrong_pass" => "Nome de usuário ou senha errados",
 	"username" => "Nome de Usuário",
 	"log_in" => "Log in",
-	"upload_type_not_allowed" => "Não é permitido envio de arquivos deste tipo."
+	"upload_type_not_allowed" => "Não é permitido envio de arquivos deste tipo.",
+	"del" => "Deletar",
+	"log_out" => "Log out"
 );
 ?>
